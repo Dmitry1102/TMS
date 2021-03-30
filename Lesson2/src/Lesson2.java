@@ -1,6 +1,5 @@
 public class Lesson2 {
     public static void main(String[] args) {
-        System.out.println("Fisrt:");
         System.out.println(sum(100, 200));
         //System.out.println(sum(Integer.MAX_VALUE, Integer.MAX_VALUE));
 
