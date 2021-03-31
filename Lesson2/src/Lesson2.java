@@ -30,11 +30,10 @@ public class Lesson2 {
     public static double average(int[] array) {
         int sum = 0;
         int countNum = array.length;
-        double avg = 0;
         for (int i = 0; i < array.length; i++) {
             sum += array[i];
         }
-        return avg = (double) sum / countNum;
+        return  sum / countNum;
     }
 
     public static int max(int[] array) {
@@ -48,7 +47,7 @@ public class Lesson2 {
     }
 
     public static double calculateHypotenuse(int a, int b) {
-        return (int) Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+        return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
 
     }
 }
