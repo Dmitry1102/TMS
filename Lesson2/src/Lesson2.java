@@ -9,13 +9,11 @@ public class Lesson2 {
     }
 
     public static int sum(int a, int b) {
-        if ((a < Integer.MAX_VALUE) && (b < Integer.MAX_VALUE)) {
-            if ((a + b) > Integer.MAX_VALUE) {
-                return -1;
-            } else return a + b;
-        } else {
+        long sum = a + (long) b;
+        if (sum > Integer.MAX_VALUE){
             return -1;
         }
+        return a + b;
     }
 
     public static int max(int a, int b) {
