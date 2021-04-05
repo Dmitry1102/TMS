@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,7 +10,7 @@ public class Lesson3 {
         System.out.println(operation(0));
         System.out.println(calculateCountOfOddElementsInMatrix(new int[]{1, 2, 3, 4, 5, 6}));
         calculateSumOfDiagonalElements();
-        countDevs(2);
+        countDevs(11);
         foobar(6);
         foobar(10);
         foobar(20);
@@ -50,20 +52,25 @@ public class Lesson3 {
     }
 
     public static void countDevs(int count) {
-        if (count % 10 == 1) {
-            System.out.println(count + " программист");
+        int C100 = count % 100;
+        int c10 = count %10;
+        if ((C100 >= 11) && (C100 <= 19)) {
+            System.out.println(count + " программистов");
         }
-        if ((count % 10 >= 2) && (count % 10 < 5)) {
+        else if ((c10 >= 2) && (c10 < 5)) {
             System.out.println(count + " программистa");
         }
-        if ((4 < count % 10) || (count % 10 == 0)) {
-
+        else if (c10 == 1) {
+            System.out.println(count + " программист");
+        }
+        else {
             System.out.println(count + " программистов");
         }
 
     }
 
     public static void foobar(int number) {
+
         if ((number % 3 == 0) && (number % 5 != 0)) {
             System.out.println("foo");
         } else if ((number % 3 != 0) && (number % 5 == 0)) {
@@ -127,8 +134,15 @@ public class Lesson3 {
 
     public static void printPrimeNumbers() {
             for (int i = 2; i < 1000; i++) {
-                if (((i==2)||(i % 2 != 0)) && ((i==3)||(i % 3 != 0)) && ((i==5)||(i % 5 != 0)) && ((i==7)||(i % 7 != 0))) {
-                    System.out.print(i + " ");
+                boolean isPrime = true;
+                for (int j = 2; j * j <= i; j++) {
+                    if (i % j == 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime) {
+                    System.out.print(i +" ");
                 }
             }
     }
