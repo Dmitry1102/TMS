@@ -6,7 +6,9 @@ public class Lesson2 {
         System.out.println(average(new int[]{0, -2, 3, -1, 5}));
         System.out.println(max(new int[]{1, 2, 3, 4, 5, 100, 99}));
         System.out.println(calculateHypotenuse(3, 4));
+
     }
+
 
     public static int sum(int a, int b) {
         long sum = a + (long) b;
