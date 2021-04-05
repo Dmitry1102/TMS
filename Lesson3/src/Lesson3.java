@@ -8,17 +8,16 @@ public class Lesson3 {
         System.out.println(operation(0));
         System.out.println(calculateCountOfOddElementsInMatrix(new int[]{1, 2, 3, 4, 5, 6}));
         calculateSumOfDiagonalElements();
-        countDevs(98);
+        countDevs(2);
         foobar(6);
         foobar(10);
-        foobar(15);
+        foobar(20);
         printMatrix();
         printPrimeNumbers();
     }
 
     private static void printArray() {
         Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
         int sizeArray = scanner.nextInt();
         int array[] = new int[sizeArray];
         for (int i = 0; i < array.length; i++) {
@@ -44,20 +43,20 @@ public class Lesson3 {
         int count = 0;
         for (int i = 0; i < ints.length; i++) {
             if (ints[i] % 2 != 0) {
-                ++count;
+                count++;
             }
         }
         return count;
     }
 
     public static void countDevs(int count) {
-        if ((count == 1) || (count % 10 == 1)) {
+        if (count % 10 == 1) {
             System.out.println(count + " программист");
         }
-        if (((count >= 2) && (count < 5)) || ((count % 10 >= 2) && (count % 10 < 5))) {
+        if ((count % 10 >= 2) && (count % 10 < 5)) {
             System.out.println(count + " программистa");
         }
-        if ((count == 0) || ((count > 4) && (count < 11)) || (4 < count % 10) || (count % 10 == 0)) {
+        if ((4 < count % 10) || (count % 10 == 0)) {
 
             System.out.println(count + " программистов");
         }
@@ -76,12 +75,13 @@ public class Lesson3 {
 
     public static void calculateSumOfDiagonalElements() {
         Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
         int num = scanner.nextInt();
         int matrix[][] = new int[num][num];
         int sum = 0;
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
-                matrix[i][j] = (int) (Math.random() * num);
+                matrix[i][j] = random.nextInt(100);
                 if (i == j) {
                     sum += matrix[i][j];
                 }
