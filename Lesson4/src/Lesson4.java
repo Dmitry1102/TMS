@@ -1,5 +1,3 @@
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -91,8 +89,11 @@ public class Lesson4 {
             for (int j = i+1; j < arr.length; j++) {
                 if ((arr[i] == arr[j])) {
                     count++;
-                    System.out.print(arr[j] + " ");
+                    if ((count >= 1) && (count < 2)) {
+                        System.out.print(arr[j] + " ");
+                    }
                 }
+
             }
         }
         if (count == 0){
