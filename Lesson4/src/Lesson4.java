@@ -51,10 +51,12 @@ public class Lesson4 {
 
     private static void returnArray(int a[]) {
         System.out.println();
+        System.out.println();
         for (int i = a.length-1; i > 0 ; i--) {
             if(a[i] % 2 != 0 )
             System.out.print(a[i]+" ");
         }
+        System.out.println();
     }
 
 
