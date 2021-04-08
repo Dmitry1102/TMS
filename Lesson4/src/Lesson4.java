@@ -1,11 +1,21 @@
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Lesson4 {
     public static void main(String[] args) {
         Random random = new Random();
-        array();
+        int mas[] = new int[100];
+        int len = 0;
+        for (int i = 0; i < mas.length; i++) {
+            mas[i] = random.nextInt(100);
+            if (mas[i] % 2 != 0) {
+                len++;
+                System.out.print(mas[i] + " ");
+            }
+        }
+        returnArray(mas);
         System.out.println("----------------------------------------------------");
         divisionAmeba();
         System.out.println("----------------------------------------------------");
@@ -39,32 +49,20 @@ public class Lesson4 {
 
     }
 
-    private static void array() {
-        Random random = new Random();
-        int mas[] = new int[100];
-        int len = 0;
-        String s ="";
-        for (int i = 0; i < mas.length; i++) {
-            mas[i] = random.nextInt(100);
-            if (mas[i] % 2 != 0) {
-                len++;
-            }
-        }
-
-
-        System.out.print(s);
+    private static void returnArray(int a[]) {
         System.out.println();
-        for (int j = len ; j > 0 ; j--) {
-       //     System.out.print(tmp[j]+ " ");
+        for (int i = a.length-1; i > 0 ; i--) {
+            if(a[i] % 2 != 0 )
+            System.out.print(a[i]+" ");
         }
-        System.out.println();
     }
+
 
     private static void transparentMatrix(int a[][]) {
         System.out.println();
         int tmp;
-        for (int i = 0; i < a.length ; i++) {
-            for (int j = 0; j < i ; j++) {
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < i; j++) {
                 tmp = a[i][j];
                 a[i][j] = a[j][i];
                 a[j][i] = tmp;
