@@ -19,7 +19,7 @@ public class Lesson4 {
         System.out.println("----------------------------------------------------");
         System.out.println(summ(11, -3));
         System.out.println("----------------------------------------------------");
-        stringleMatrix();
+        tringleMatrix();
         System.out.println("----------------------------------------------------");
         number(56);
         System.out.println("----------------------------------------------------");
@@ -206,7 +206,7 @@ public class Lesson4 {
         System.out.println("0, количество цифр: 1");
     }
 
-    private static void stringleMatrix() {
+    private static void tringleMatrix() {
         int matrix[][] = new int[4][4];
 
         System.out.println();
