@@ -17,11 +17,11 @@ public class Lesson4 {
         System.out.println("----------------------------------------------------");
         divisionAmeba();
         System.out.println("----------------------------------------------------");
-        System.out.println(summ(11, 3));
+        System.out.println(summ(11, -3));
         System.out.println("----------------------------------------------------");
         stringleMatrix();
         System.out.println("----------------------------------------------------");
-        number(-6644457);
+        number(56);
         System.out.println("----------------------------------------------------");
         maxElement();
         System.out.println("----------------------------------------------------");
@@ -38,7 +38,7 @@ public class Lesson4 {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 mtr[i][j] = random.nextInt(50);
-                System.out.print(mtr[i][j]+ " ");
+                System.out.print(mtr[i][j] + " ");
             }
             System.out.println();
         }
@@ -47,12 +47,15 @@ public class Lesson4 {
 
     }
 
+
+
+
     private static void returnArray(int a[]) {
         System.out.println();
         System.out.println();
-        for (int i = a.length-1; i > 0 ; i--) {
-            if(a[i] % 2 != 0 )
-            System.out.print(a[i]+" ");
+        for (int i = a.length - 1; i > 0; i--) {
+            if (a[i] % 2 != 0)
+                System.out.print(a[i] + " ");
         }
         System.out.println();
     }
@@ -110,8 +113,10 @@ public class Lesson4 {
             System.out.print(a[i] + " ");
             if (max <= a[i]) {
                 max = a[i];
+
             }
         }
+
         System.out.println();
         temp = a[0];
         for (int i = 0; i < a.length; i++) {
@@ -121,6 +126,7 @@ public class Lesson4 {
             a[0] = max;
             System.out.print(a[i] + " ");
         }
+
         System.out.println();
     }
 
@@ -163,26 +169,41 @@ public class Lesson4 {
     }
 
 
+
     private static void number(int a) {
         int count = 0;
-        int num = a;
         if (a > 0) {
-            while (a != 0) {
-                count++;
-                a /= 10;
-            }
-            System.out.println(num + " - это положительное число, количество цифр: " + count);
-
+            positiveExpression(a, count);
         } else if (a < 0) {
-            while (a != 0) {
-                count++;
-                a /= 10;
-            }
-            System.out.println(num + " - это отрицательное число, количество цифр: " + count);
+            negativeExpression(a, count);
         } else {
-            System.out.println("0, количество цифр: 1");
+            zeroExpression();
+
         }
 
+    }
+    private static void negativeExpression(int n, int ct) {
+        int num = n;
+        while (n != 0) {
+            ct++;
+            num /= 10;
+        }
+        System.out.println(n + " - это отрицательное число, количество цифр: " + ct);
+    }
+
+
+    private static void positiveExpression(int n, int ct) {
+        int num = n;
+        while (num != 0) {
+            ct++;
+            num /= 10;
+        }
+
+        System.out.println(n + " - это положительное число, количество цифр: " + ct);
+    }
+
+    private static void zeroExpression() {
+        System.out.println("0, количество цифр: 1");
     }
 
     private static void stringleMatrix() {
@@ -200,10 +221,11 @@ public class Lesson4 {
 
     private static int summ(int a, int b) {
         int multiple = 0;
-        for (int i = 0; i < a; i++) {
-            for (int j = 0; j < b; j++) {
-                multiple++;
-            }
+        for (int i = 0; i < Math.abs(b); i++) {
+            multiple += a;
+        }
+        if (b < 0) {
+            return -multiple;
         }
         return multiple;
     }
@@ -215,6 +237,9 @@ public class Lesson4 {
             System.out.println("Количество aмеб: " + ameba + " через: " + i + " часа");
         }
     }
-
-
 }
+
+
+
+
+
