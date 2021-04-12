@@ -27,20 +27,22 @@ public class Computer {
 
 
     public void on() {
-        try {
+        System.out.println("Внимание! Введите 0 или 1");
+        Scanner scanner = new Scanner(System.in);
+        int myNumber = scanner.nextInt();
+        if ((myNumber == 0) || (myNumber == 1)) {
             Random random = new Random();
-            Scanner scanner = new Scanner(System.in);
-            int myNumber = scanner.nextInt() ;
+            int count = 0;
             int number;
             do {
-                number = random.nextInt();
-            } while (resourceActivity < number);
+                count++;
+                number = random.nextInt(2);
+            } while (resourceActivity < count);
             error(number);
             if (number == myNumber) {
                 off();
             }
-
-        } catch (Exception e) {
+        } else {
             System.out.println("Внимание! Введите 0 или 1");
         }
 
