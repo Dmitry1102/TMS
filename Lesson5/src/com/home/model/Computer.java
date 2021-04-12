@@ -3,55 +3,89 @@ package com.home.model;
 import java.util.Random;
 import java.util.Scanner;
 
+
 public class Computer {
 
     String processor;
     String operativeMemory;
     String hardDrive;
     int resourceActivity;
+    int enteredNum;
+    int rand;
+    boolean flag;
 
-    public Computer(String s, String s1, String s2, int i) {
-        processor = s;
-        operativeMemory = s1;
-        hardDrive = s2;
-        resourceActivity = i;
+    public Computer(String processor, String operativeMemory, String hardDrive, int resourceActivity) {
+        this.processor = processor;
+        this.operativeMemory = operativeMemory;
+        this.hardDrive = hardDrive;
+        this.resourceActivity = resourceActivity;
     }
 
-    public void printResult(){
-        System.out.println("processor: " + processor );
-        System.out.println("operative memory: " + operativeMemory );
-        System.out.println("hard drive disk: " + hardDrive );
-        System.out.println("resource activity : " + resourceActivity );
+    public void printResult() {
+        System.out.println("processor: " + processor);
+        System.out.println("operative memory: " + operativeMemory);
+        System.out.println("hard drive disk: " + hardDrive);
+        System.out.println("resource activity : " + resourceActivity);
 
     }
-
 
     public void on() {
-        System.out.println("Внимание! Введите 0 или 1");
-        Scanner scanner = new Scanner(System.in);
-        int myNumber = scanner.nextInt();
-        if ((myNumber == 0) || (myNumber == 1)) {
-            Random random = new Random();
-            int count = 0;
-            int number;
-            do {
-                count++;
-                number = random.nextInt(2);
-            } while (resourceActivity < count);
-            error(number);
-            if (number == myNumber) {
-                off();
-            }
-        } else {
-            System.out.println("Внимание! Введите 0 или 1");
+        if (!flag) {
+            inputStatement();
+            randomNumbers();
         }
+        finalOn();
 
     }
 
+    public void off() {
+        if (!flag) {
+            inputStatement();
+            randomNumbers();
+        }
+        finalOff();
+    }
 
-    private void off() {
-        System.out.println("The End Of Work");
-        System.exit(0);
+    private void finalOff() {
+        if (enteredNum == rand || !flag) {
+            System.out.println("Конец Работы...");
+            on();
+        } else {
+            System.out.println("Компьютер сгорел!");
+        }
+    }
+
+    private void finalOn() {
+        if (enteredNum == rand || !flag) {
+            System.out.println("Конец Работы...");
+            off();
+        } else {
+            System.out.println("Компьютер сгорел!");
+        }
+    }
+
+    private void inputStatement() {
+        Scanner scanner = new Scanner(System.in);
+        int count = 0;
+        do {
+            do {
+                System.out.println("Внимание! Введите 0 или 1");
+                while (!scanner.hasNextInt()) {
+                    System.out.println("Введите 0 или 1");
+                    scanner.next();
+                }
+                enteredNum = scanner.nextInt();
+            } while (enteredNum < 0 || enteredNum > 1);
+            count++;
+            randomNumbers();
+        } while (resourceActivity < count);
+
+    }
+
+    public void randomNumbers() {
+        Random random = new Random();
+        rand = random.nextInt(2);
+        error(rand);
     }
 
 
