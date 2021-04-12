@@ -9,7 +9,7 @@ public class Main {
         Computer computer = new Computer("Intel I7","RAM23","HDD211", 5);
         computer.on();
         System.out.println();
-        //computer.printResult();
+        computer.printResult();
 
 
     }
