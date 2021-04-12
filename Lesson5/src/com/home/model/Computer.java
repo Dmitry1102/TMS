@@ -50,7 +50,8 @@ public class Computer {
 
 
     private void off() {
-
+        System.out.println("The End Of Work");
+        System.exit(0);
     }
 
 
