@@ -1,8 +1,9 @@
 package com.military.profile;
 
 public class Adress {
-    private String country;
-    private String city;
+    public String country;
+    public String city;
+
 
     public Adress(String country, String city) {
         this.country = country;
