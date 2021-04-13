@@ -5,7 +5,10 @@
       <module fileurl="file://$PROJECT_DIR$/Lesson2/Lesson2.iml" filepath="$PROJECT_DIR$/Lesson2/Lesson2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lesson3/Lesson3.iml" filepath="$PROJECT_DIR$/Lesson3/Lesson3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lesson4/Lesson4.iml" filepath="$PROJECT_DIR$/Lesson4/Lesson4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lesson5/Lesson5.iml" filepath="$PROJECT_DIR$/Lesson5/Lesson5.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/TMS.iml" filepath="$PROJECT_DIR$/.idea/TMS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lesson5/Test.iml" filepath="$PROJECT_DIR$/Lesson5/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Test/Test1.iml" filepath="$PROJECT_DIR$/Test/Test1.iml" />
     </modules>
   </component>
 </project>
