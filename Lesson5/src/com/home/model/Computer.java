@@ -13,6 +13,7 @@ public class Computer {
     int enteredNum;
     int rand;
     boolean flag;
+    int count = 0;
 
     public Computer(String processor, String operativeMemory, String hardDrive, int resourceActivity) {
         this.processor = processor;
@@ -30,24 +31,20 @@ public class Computer {
     }
 
     public void on() {
-        if (!flag) {
-            inputStatement();
-            randomNumbers();
-        }
+        inputStatement();
+        randomNumbers();
         finalOn();
 
     }
 
     public void off() {
-        if (!flag) {
-            inputStatement();
-            randomNumbers();
-        }
+        inputStatement();
+        randomNumbers();
         finalOff();
     }
 
     private void finalOff() {
-        if (enteredNum == rand || !flag) {
+        if (enteredNum == rand) {
             System.out.println("Конец Работы...");
             on();
         } else {
@@ -56,7 +53,7 @@ public class Computer {
     }
 
     private void finalOn() {
-        if (enteredNum == rand || !flag) {
+        if (enteredNum == rand) {
             System.out.println("Конец Работы...");
             off();
         } else {
@@ -66,7 +63,6 @@ public class Computer {
 
     private void inputStatement() {
         Scanner scanner = new Scanner(System.in);
-        int count = 0;
         do {
             do {
                 System.out.println("Внимание! Введите 0 или 1");
@@ -85,13 +81,7 @@ public class Computer {
     public void randomNumbers() {
         Random random = new Random();
         rand = random.nextInt(2);
-        error(rand);
+
     }
 
-
-    private void error(int a) {
-        if (a > resourceActivity) {
-            System.out.println("Компьютер сгорел!");
-        }
-    }
 }
