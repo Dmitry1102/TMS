@@ -74,7 +74,6 @@ public class MilitaryOffice {
 
     public void check() {
         Person personRegistry = new Person(this.nameObj, this.ageObj, this.sexObj, this.cityObj, this.countryObj);
-
         for (int i = 0; i < numberPerson; i++) {
             if (countryObj.equals(COUNTRY)) {
                 if (sexObj.equals(MAN)) {
@@ -120,21 +119,27 @@ public class MilitaryOffice {
     }
 
     public void personsMinsk() {
-        if (cityObj.equals(CITY)) {
+        Person personRegistry = new Person(this.nameObj, this.ageObj, this.sexObj, this.cityObj, this.countryObj);
+        if (personRegistry.getAdress().getCity().equals(CITY)) {
             System.out.println(persons);
         }
     }
 
     public void lastPeriodPerson() {
-        if (ageObj >= 25) {
+        Person personRegistry = new Person(this.nameObj, this.ageObj, this.sexObj, this.cityObj, this.countryObj);
+        if (personRegistry.getAge() >= 25) {
             System.out.println(persons);
         }
     }
 
+    Adress adress;
+
     public void namedPerson() {
-        if (nameObj.equals(NAME)) {
+        Person personRegistry = new Person(this.nameObj, this.ageObj, this.sexObj, this.cityObj, this.countryObj);
+        if (personRegistry.getName().equals(NAME)) {
             System.out.println(persons);
         }
+
     }
 
 
