@@ -5,15 +5,14 @@ public class Person {
     private String name;
     private int age;
     private String sex;
-    Adress adress;
+    private Adress adress;
 
+    public Person(String nameObj, int ageObj, String sexObj, String cityObj, String countryObj) {
+        name = nameObj;
+        age = ageObj;
+        sex = sexObj;
+        adress = new Adress(cityObj, countryObj);
 
-    public Person(String name, int age, String sex, Adress adress) {
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
-        this.adress = adress.getCountry();
-        this.adress = adress.getCity();
     }
 
     public String getName() {
