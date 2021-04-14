@@ -4,22 +4,23 @@ import java.util.Scanner;
 import java.util.stream.IntStream;
 
 public class MilitaryOffice {
-    String nameObj;
-    int ageObj;
-    String sexObj;
-    String countryObj;
-    String cityObj;
-    int numberPerson;
+    public String nameObj;
+    public int ageObj;
+    public String sexObj;
+    public String countryObj;
+    public String cityObj;
+    public int numberPerson;
 
     Scanner scanner = new Scanner(System.in);
+    Person personRegistry = new Person(this.nameObj, this.ageObj, this.sexObj, this.countryObj, this.cityObj);
+    Person[] person = new Person[numberPerson];
 
-
-    private void numberPerson() {
+    public void numberPerson() {
         System.out.println("Введите число призывников: ");
         this.numberPerson = scanner.nextInt();
     }
 
-    private void nameEnter() {
+    public void nameEnter() {
         System.out.println("Введите Имя: ");
         this.nameObj = scanner.nextLine();
         while (!this.nameObj.matches("[a-zA-Z]+")) {
@@ -36,22 +37,29 @@ public class MilitaryOffice {
 
     }
 
-    private void sexEnter() {
+    public void sexEnter() {
         System.out.println("Введите Пол: ");
-        this.sexObj = scanner.nextLine();
+        sexObj = scanner.nextLine();
         while (!this.sexObj.matches("[a-zA-Z]+")) {
             this.sexObj = scanner.nextLine();
         }
     }
 
-    private void cityEnter() {
+    public void cityEnter() {
         System.out.println("Введите Город: ");
         this.cityObj = scanner.nextLine();
     }
 
-    private void countryEnter() {
+    public void countryEnter() {
         System.out.println("Введите Страну: ");
-        this.cityObj = scanner.nextLine();
+        this.countryObj = scanner.nextLine();
+
+    }
+
+    public void printList() {
+        System.out.print("name: " + this.nameObj + " age: " + this.ageObj + " sex: " + this.sexObj + " country: " + this.countryObj + " city: " + this.cityObj);
+        System.out.println();
+
     }
 
 
@@ -63,16 +71,13 @@ public class MilitaryOffice {
             sexEnter();
             cityEnter();
             countryEnter();
+            printList();
+            System.out.println();
         });
 
 
     }
 
 
-    Person personRegistry = new Person(this.nameObj, this.ageObj, this.sexObj, this.cityObj, this.countryObj);
-
-    public void accept() {
-
-    }
 
 }

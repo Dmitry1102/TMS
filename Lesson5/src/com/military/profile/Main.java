@@ -5,5 +5,6 @@ public class Main {
 
         MilitaryOffice militaryOffice = new MilitaryOffice();
         militaryOffice.fillInfo();
+
     }
 }
