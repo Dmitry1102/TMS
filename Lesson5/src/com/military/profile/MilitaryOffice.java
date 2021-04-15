@@ -79,6 +79,7 @@ public class MilitaryOffice {
                 if (sexObj.equals(MAN)) {
                     if (ageObj > 18 && ageObj < 28) {
                         persons.add(personRegistry);
+
                     } else {
                         System.out.println("Не проходит до призыва по возрасту...");
                         break;
@@ -132,7 +133,6 @@ public class MilitaryOffice {
         }
     }
 
-    Adress adress;
 
     public void namedPerson() {
         Person personRegistry = new Person(this.nameObj, this.ageObj, this.sexObj, this.cityObj, this.countryObj);

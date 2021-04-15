@@ -24,5 +24,14 @@ public class Adress {
 
     public void setCountry(String country) {
         this.country = country;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Adress{" +
+                "city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                '}';
     }
 }
