@@ -1,35 +1,15 @@
 package com.military.profile;
 
 public class Person {
-
     private String name;
     private int age;
     private String sex;
-    private Adress adress;
+    Adress adress;
 
-    public Person(String nameObj, int ageObj, String sexObj, String cityObj, String countryObj) {
-        name = nameObj;
-        age = ageObj;
-        sex = sexObj;
-        adress = new Adress(cityObj, countryObj);
-
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", sex='" + sex + '\'' +
-                ", adress=" + adress +
-                '}';
-    }
-
-    public Adress getAdress() {
-        return adress;
-    }
-
-    public void setAdress(Adress adress) {
+    public Person(String name, int age, String sex, Adress adress) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
         this.adress = adress;
     }
 
@@ -55,5 +35,23 @@ public class Person {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public Adress getAdress() {
+        return adress;
+    }
+
+    public void setAdress(Adress adress) {
+        this.adress = adress;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", sex='" + sex + '\'' +
+                ", adress=" + adress +
+                '}';
     }
 }

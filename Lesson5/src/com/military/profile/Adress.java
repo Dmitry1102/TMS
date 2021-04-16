@@ -1,7 +1,6 @@
 package com.military.profile;
 
 public class Adress {
-
     private String city;
     private String country;
 
@@ -24,7 +23,6 @@ public class Adress {
 
     public void setCountry(String country) {
         this.country = country;
-
     }
 
     @Override
