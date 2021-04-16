@@ -1,12 +1,11 @@
 package com.military.profile;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class PersonRegestry {
-    private List<Person> personList = new ArrayList<>();
+public class PersonRegistry {
+    private List<Person> personList;
 
-    public PersonRegestry(List<Person> personList) {
+    public PersonRegistry(List<Person> personList) {
         this.personList = personList;
     }
 

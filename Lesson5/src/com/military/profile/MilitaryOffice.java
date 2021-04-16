@@ -1,17 +1,17 @@
 package com.military.profile;
 
 public class MilitaryOffice {
-    private PersonRegestry personRegestry;
+    private PersonRegistry personRegistry;
 
-    public MilitaryOffice(PersonRegestry personRegestry) {
-        this.personRegestry = personRegestry;
+    public MilitaryOffice(PersonRegistry personRegistry) {
+        this.personRegistry = personRegistry;
     }
 
-    public PersonRegestry getPersonRegestry() {
-        return personRegestry;
+    public PersonRegistry getPersonRegestry() {
+        return personRegistry;
     }
 
-    public void setPersonRegestry(PersonRegestry personRegestry) {
-        this.personRegestry = personRegestry;
+    public void setPersonRegistry(PersonRegistry personRegistry) {
+        this.personRegistry = personRegistry;
     }
 }

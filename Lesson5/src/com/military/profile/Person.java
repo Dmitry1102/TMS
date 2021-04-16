@@ -4,13 +4,13 @@ public class Person {
     private String name;
     private int age;
     private String sex;
-    Adress adress;
+    Address address;
 
-    public Person(String name, int age, String sex, Adress adress) {
+    public Person(String name, int age, String sex, Address address) {
         this.name = name;
         this.age = age;
         this.sex = sex;
-        this.adress = adress;
+        this.address = address;
     }
 
     public String getName() {
@@ -37,12 +37,12 @@ public class Person {
         this.sex = sex;
     }
 
-    public Adress getAdress() {
-        return adress;
+    public Address getAdress() {
+        return address;
     }
 
-    public void setAdress(Adress adress) {
-        this.adress = adress;
+    public void setAdress(Address address) {
+        this.address = address;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class Person {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", sex='" + sex + '\'' +
-                ", adress=" + adress +
+                ", adress=" + address +
                 '}';
     }
 }
