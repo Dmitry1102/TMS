@@ -9,10 +9,6 @@ public class Main {
         List<Person> personList = new ArrayList<>();
         Info info = new Info();
         info.enterPersons();
-        PersonRegistry personRegistry = new PersonRegistry(personList);
-        for (var person : personRegistry.getPersonList()) {
-            System.out.println(person.getName());
-        }
         System.out.println("Призывники города Минска: ");
         info.rightCity();
         System.out.println("Призывники от 25 до 27: ");

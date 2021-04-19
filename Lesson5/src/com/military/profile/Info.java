@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Info {
-    private static final Scanner in = new Scanner(System.in);
+    Scanner in = new Scanner(System.in);
     private static final PersonRegistry personRegistry = new PersonRegistry(new ArrayList<>());
     public final String CITY = "Минск";
     public String NAME = "Александр";
@@ -26,11 +26,11 @@ public class Info {
         System.out.println("Enter country: ");
         String country;
         while (!(country = in.nextLine()).matches("[а-яА-Я]+")) ;
-        Address address = new Address(city, country);
-        Person person = new Person(name, age, sex, address);
         if (country.equals(COUNTRY)) {
             if (sex.equals(MAN)) {
                 if (age >= 18 && age < 27) {
+                    Address address = new Address(city, country);
+                    Person person = new Person(name, age, sex, address);
                     personRegistry.getPersonList().add(person);
                 } else {
                     System.out.println("Не проходит до призыва по возрасту...");
@@ -43,13 +43,19 @@ public class Info {
             System.out.println("Гражданин Другого Государства...");
         }
         System.out.println();
+
+
     }
+
 
     public void enterPersons() {
         System.out.println("Enter count: ");
         int count = in.nextInt();
         for (int i = 0; i < count; i++) {
             enterPerson();
+        }
+        for (int i = 0; i < count; i++) {
+            System.out.println(personRegistry.getPersonList());
         }
     }
 
@@ -76,4 +82,6 @@ public class Info {
             }
         }
     }
+
+
 }
