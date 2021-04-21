@@ -1,18 +1,13 @@
 package com.factory.main;
 
-import com.factory.main.transport.Airtransport.army.Army;
-import com.factory.main.transport.Airtransport.civilPlane.Civil;
-import com.factory.main.transport.GroundTransport.LiteWeight.LiteWeight;
-import com.factory.main.transport.GroundTransport.Truck.Truck;
+import com.factory.main.entity.Army;
+import com.factory.main.entity.Civil;
+import com.factory.main.entity.LiteWeight;
+import com.factory.main.entity.Truck;
 
 import java.util.Scanner;
 
 public class Main {
-    static Civil civil;
-    static LiteWeight liteWeight;
-    static Army army;
-    static Truck truck;
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Input input = new Input();
@@ -50,7 +45,13 @@ public class Main {
         System.out.println();
 
         army.catapultation();
+        army.shoot();
 
+        Scanner scanner = new Scanner(System.in);
+        int time = scanner.nextInt();
+        LiteWeight liteWeight = new LiteWeight(122, 23, 2, "Mazda", 4, 43, 3, "sedan", 5);
+        liteWeight.countData(time);
 
     }
 }
+
