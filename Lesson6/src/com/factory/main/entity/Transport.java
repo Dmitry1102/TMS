@@ -1,15 +1,29 @@
-package com.factory.main.transport;
+package com.factory.main.entity;
 
-public class Transport {
+public abstract class Transport {
+    private static final double MULTIPLE_NUMBER = 0.74;
     private int power;
     private int maxSpeed;
     private int weight;
-    private int type;
+    private String type;
 
-    public Transport(int power, int maxSpeed, int weight, int type) {
+
+    private int powerStatement() {
+        return (int) Math.round(power * MULTIPLE_NUMBER);
+    }
+
+    public Transport(int power, int maxSpeed, int weight, String type) {
         this.power = power;
         this.maxSpeed = maxSpeed;
         this.weight = weight;
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -37,19 +51,8 @@ public class Transport {
         this.weight = weight;
     }
 
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
-    }
+    public abstract void print();
 
 
-    @Override
-    public String toString() {
-        return "The power of vechicle: " + power + "\n the max speed of vehicle: " + maxSpeed +
-                "\n weight: " + weight +
-                "\n number of type Transport: " + type + "\n";
-    }
+
 }
