@@ -11,7 +11,7 @@ public class Robot implements IRobot {
     private IHand hand;
     private ILeg leg;
     private int price;
-    static Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
 
     public Robot(IHead head, IHand hand, ILeg leg) {
         this.head = head;
@@ -61,6 +61,7 @@ public class Robot implements IRobot {
                 break;
             case 3:
                 leg.step();
+                break;
         }
     }
 

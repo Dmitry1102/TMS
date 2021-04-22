@@ -1,7 +1,7 @@
 package com.practise.robot.hands;
 
 public class SamsungHand implements IHand {
-    private int price = 7;
+    private int price;
 
     public SamsungHand(int price) {
         this.price = price;

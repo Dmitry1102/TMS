@@ -44,7 +44,9 @@ public class Run {
         System.out.println();
 
         System.out.println("Who cost more?");
-        System.out.println(maxCost(robot1.getPrice(), robot2.getPrice(), robot3.getPrice()));
+        maxCost(robot1.getPrice(), robot2.getPrice(), robot3.getPrice());
+
+
 
 
        /*
@@ -57,17 +59,17 @@ public class Run {
         */
     }
 
+
     static int maxCost(int first, int second, int third) {
-        if (first > second && first > third) {
-            System.out.println("First Robot most expensive");
-            return first;
-        } else if (second > first && second > third) {
-            System.out.println("Second Robot most expensive");
-            return second;
-        } else {
-            System.out.println("Third Robot most expensive");
-            return third;
+        int cost[] = new int[]{first, second, third};
+        int max = 0;
+        for (int i = 0; i < cost.length; i++) {
+            if (max < cost[i]) {
+                max = cost[i];
+            }
         }
+        System.out.println("most expensive " + max);
+        return max;
 
     }
 
