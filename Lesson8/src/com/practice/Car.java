@@ -2,7 +2,7 @@ package com.practice;
 
 import java.util.Random;
 
-public class Car {
+public class Car implements Start {
     private String type;
     private int speed;
     private int cost;
@@ -40,13 +40,13 @@ public class Car {
         this.cost = cost;
     }
 
-    public void start() throws CarStartException, NullParamsException {
+    public void start() throws NullParamsException, CarStartException {
         Random random = new Random();
         int randomNumber = random.nextInt(20);
         if (type != null || speed != 0 || cost != 0) {
             if (randomNumber % 2 != 0) {
                 System.out.println("Автомобиль: " + type + " завелся....");
-            } else throw new CarStartException("Exception: CarStartException thrown");
+            } else throw new CarStartException(type + " Не смог завестись");
         } else throw new NullParamsException("Exception: NullParamsException thrown");
 
     }
